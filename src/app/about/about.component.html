@@ -1,0 +1,12 @@
+<p>
+  about works!
+</p>
+
+<div>
+  <h4>My Hobbies : {{hobbies}}</h4>
+</div>
+
+<div *ngFor="let post of post">
+    <h3>{{post.id}}) {{post.title}}</h3>
+    <p>{{post.body}}</p>
+</div>

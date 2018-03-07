@@ -1,0 +1,20 @@
+<h3>Name:{{name}}</h3>
+<p>Parent event data => {{eventdata}}</p>
+<input type="text" [(ngModel)]="name" name="name" />
+<p>{{address.city}},{{address.state}}</p>
+
+<p><app-child [model]="model" (myevent)="getNote($event)"></app-child></p>
+
+<button type="button" (click)="toggleHobbies()">{{isHobbies?"Hide":"Show"}} Hobbies</button>
+
+<div *ngIf="isHobbies">
+    <h5>My Hobbies ({{count}})</h5>
+    <form (submit)="addHobbies()">
+        <input type="text" [(ngModel)]="hoby" name="hoby"/>
+        <button type="submit">AddHobbies</button>
+    </form>
+    <ul>
+        <li *ngFor="let hoby of hobbies;let i=index">{{hoby}} 
+            <button type="button" (click)="removeHobbies(i)">X</button></li>
+    </ul>
+</div>
